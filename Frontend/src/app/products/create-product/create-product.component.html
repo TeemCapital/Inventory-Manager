@@ -1,0 +1,23 @@
+<div class="alert alert-primary" *ngIf="productCreatedNotification===true" role="alert">
+  Product Created Successfully!
+</div>
+<div class="container">
+  <div class="row">
+      <h1 class="text-center text-white bg-dark p-2 rounded">Create a Product</h1>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-8 mx-auto">
+      <form #productForm="ngForm" class="border shadow p-2 rounded" (ngSubmit)="submit(productForm.value)">
+        <label for="Product Name">Product Name</label>
+        <input name="name"  type="text" reqiured class="form-control" ngModel>
+        <label for=" Price"> Price</label>
+        <input name="price"  type="number" reqiured class="form-control" ngModel>
+        <label for="Company"> Company</label>
+        <input name="company"  type="text" reqiured class="form-control" ngModel>
+        <label for="Quantity"> Quantity</label>
+        <input name="quantity"  type="number" reqiured class="form-control" ngModel>
+        <button class="btn btn-dark mt-2" [disabled]="!productForm.valid">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
